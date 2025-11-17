@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Saya</title>
+    <title>Airlangga Putra Sumadi - Network & IT Specialist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <a href="#" class="logo">Airlangga P.S.</a>
-
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav class="nav-links">
+            <h1 class="logo">Airlangga P.S.</h1>
+            <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">Tentang</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
                     <li><a href="#projects">Proyek</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
@@ -32,38 +26,86 @@
     <main>
         <section id="hero">
             <div class="container">
-                <h1>Halo, Saya Airlangga</h1>
-                <p class="subtitle">Mahasiswa & Web Developer</p>
-                <a href="#projects" class="cta-button">Lihat Proyek Saya</a>
+                <h2>Halo, saya Airlangga</h2>
+                <p>Mahasiswa Pendidikan Ilmu Komputer & Spesialis Jaringan</p>
+                <a href="#skills" class="cta-button">Lihat Keahlian Saya</a>
             </div>
         </section>
 
         <section id="about">
             <div class="container">
                 <h2>Tentang Saya</h2>
-                <p>Tulis paragraf singkat di sini yang menjelaskan siapa Anda, apa yang Anda pelajari, dan apa minat Anda. Buatlah tetap ringkas dan menarik!</p>
+                <p style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    Saya adalah seorang mahasiswa di <strong>Universitas Pendidikan Indonesia</strong>, 
+                    dari program studi Pendidikan Ilmu Komputer. 
+                    <br><br>
+                    Saya memiliki latar belakang kuat dari SMK di bidang Teknik Komputer Jaringan (TKJ), 
+                    dan memiliki keahlian praktis dalam konfigurasi hardware dan jaringan, 
+                    terutama menggunakan perangkat <strong>MikroTik (RouterOS)</strong>. 
+                    Saat ini saya juga terus mengembangkan keterampilan di bidang web development.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Keahlian Teknis</h2>
+                <div class="project-grid">
+                    
+                    <div class="project-card">
+                        <h3>Jaringan & MikroTik</h3>
+                        <p>
+                            Ahli dalam konfigurasi Routing, Firewall, Hotspot, 
+                            VLAN, dan Manajemen Bandwidth menggunakan MikroTik RouterOS.
+                        </p>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Hardware & Sistem Operasi</h3>
+                        <p>
+                            Perakitan PC, troubleshooting hardware, dan instalasi server. 
+                            Menguasai Linux (Debian/Ubuntu) dan Windows Server.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Web & Programming</h3>
+                        <p>
+                            Memahami dasar HTML, CSS, JavaScript. 
+                            Tertarik menggunakan Python untuk otomatisasi jaringan.
+                        </p>
+                    </div>
+
+                </div>
             </div>
         </section>
 
         <section id="projects">
             <div class="container">
-                <h2>Proyek Unggulan</h2>
+                <h2>Proyek & Pengalaman</h2>
                 <div class="project-grid">
+                    
                     <div class="project-card">
-                        <h3>Nama Proyek 1</h3>
-                        <p>Deskripsi singkat tentang proyek ini. Teknologi apa yang digunakan?</p>
-                        <a href="#">Lihat Kode</a>
+                        <h3>Konfigurasi Jaringan (Studi Kasus)</h3>
+                        <p>Mendesain dan mengimplementasikan topologi jaringan
+                           untuk lab sekolah/kantor kecil menggunakan MikroTik.</p>
+                        <a href="#">Lihat Dokumentasi</a>
                     </div>
+                    
                     <div class="project-card">
-                        <h3>Nama Proyek 2</h3>
-                        <p>Deskripsi singkat tentang proyek ini. Ini adalah proyek mata kuliah.</p>
-                        <a href="#">Lihat Kode</a>
+                        <h3>Instalasi Server Ujian (CBT)</h3>
+                        <p>Setup server lokal untuk Ujian Berbasis Komputer (CBT) di SMK 
+                           menggunakan VMWare dan Linux Debian.</p>
+                        <a href="#">Lihat Studi Kasus</a>
                     </div>
+
                     <div class="project-card">
-                        <h3>Nama Proyek 3</h3>
-                        <p>Deskripsi singkat tentang proyek ini. Dibuat menggunakan HTML & CSS.</p>
-                        <a href="#">Lihat Kode</a>
+                        <h3>Website Portofolio</h3>
+                        <p>Proyek web statis ini, dibuat dengan HTML/CSS murni 
+                           dan di-deploy di GitHub Pages dengan custom domain.</p>
+                        <a href="https[://]github.com/[username]/[nama-repo]" target="_blank">Lihat Kode</a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -71,19 +113,19 @@
         <section id="contact">
             <div class="container">
                 <h2>Hubungi Saya</h2>
-                <p>Anda bisa menemukan saya di platform berikut:</p>
-                <div class="social-links">
-                    <a href="https://github.com/airlanggaps08" target="_blank">GitHub</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="mailto:emailanda@contoh.com">Email</a>
-                </div>
+                <p>Mari terhubung! Saya terbuka untuk diskusi atau kolaborasi proyek.</p>
+                <ul class="social-links">
+                    <li><a href="https[://]github.com/[username]" target="_blank">GitHub</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:emailanda@contoh.com">Email</a></li>
+                </ul>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025. Dibuat oleh Airlangga Putra Sumadi.</p>
+            <p>&copy; 2025 Airlangga Putra Sumadi. All rights reserved.</p>
         </div>
     </footer>
 
