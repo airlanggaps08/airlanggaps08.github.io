@@ -1,0 +1,268 @@
+/* --- 1. PENGATURAN DASAR & MOBILE-FIRST --- */
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Bikin scroll saat klik nav jadi halus */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Warna latar belakang sedikit abu-abu */
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Konten tidak akan mentok ke pinggir di HP */
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 3rem 0; /* Jarak antar bagian */
+}
+
+/* --- 2. HEADER & NAVIGASI (MOBILE) --- */
+
+header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Ini adalah menu hamburger (3 garis) */
+.menu-button {
+    display: flex; /* Tampilkan di HP */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Sembunyikan checkbox asli */
+#menu-toggle {
+    display: none;
+}
+
+/* Menu navigasi di HP (disembunyikan di luar layar) */
+.nav-links {
+    position: fixed; /* Menu melayang di atas segalanya */
+    top: 0;
+    left: -100%; /* Sembunyi di sebelah kiri */
+    width: 80%;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease-in-out;
+}
+
+.nav-links ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 2rem 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Trik Ajaib: Saat checkbox di-klik, tampilkan menu */
+#menu-toggle:checked ~ .nav-links {
+    left: 0; /* Pindahkan menu ke layar */
+}
+
+/* Animasi tombol hamburger jadi 'X' saat diklik */
+#menu-toggle:checked + .menu-button span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked + .menu-button span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .menu-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+
+/* --- 3. KONTEN (MOBILE) --- */
+
+#hero {
+    background-color: #343a40; /* Latar gelap */
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+#about, #projects, #contact {
+    text-align: center;
+}
+
+/* Proyek: 1 kolom di HP */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolom */
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Efek kartu terangkat */
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #007bff;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #343a40;
+    color: #aaa;
+    margin-top: 2rem;
+}
+
+
+/* --- 4. RESPONSIVE (TABLET & DESKTOP) --- */
+
+/* Ini adalah @media query. 
+   Aturan di dalamnya HANYA berlaku jika lebar layar 768px atau lebih */
+@media (min-width: 768px) {
+
+    .container {
+        width: 85%;
+        max-width: 960px; /* Batas lebar maksimum di desktop */
+    }
+
+    /* Sembunyikan tombol hamburger di desktop */
+    .menu-button {
+        display: none;
+    }
+
+    /* Ubah navigasi jadi horizontal di desktop */
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-links ul {
+        display: flex; /* Navigasi jadi horizontal */
+        gap: 2rem;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Ukuran font normal */
+    }
+
+    #hero h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Proyek: Jadi 3 kolom di desktop */
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    }
+}
